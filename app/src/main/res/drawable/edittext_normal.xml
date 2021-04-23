@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/text_cripto" />
+            <corners android:radius="6sp" />
+            <stroke android:width="2dp" android:color="@color/text_cripto"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/background_cripto" />
+            <corners android:radius="6sp" />
+            <stroke android:width="2dp" android:color="@color/text_cripto"/>
+        </shape>
+    </item>
+</selector>
