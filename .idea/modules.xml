@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CriptoGanhos.iml" filepath="$PROJECT_DIR$/.idea/CriptoGanhos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CriptoGanhos.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CriptoGanhos.app.iml" />
+    </modules>
+  </component>
+</project>
