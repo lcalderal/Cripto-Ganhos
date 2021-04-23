@@ -35,7 +35,7 @@ public class InvestimentosActivity extends AppCompatActivity {
 
         DataBaseHelper db = new DataBaseHelper(getApplicationContext());
 
-        String[] lista = {"BITCOIN;50%;R$ 7.500,00;R$ 5.500,00;1.2 BTC;R$ 2.500,00", "LINK;100%;R$ 10.000,00;R$ 5.000,00;1.0 BTC;R$ 5.000,00"};
+        String[] lista = {"BITCOIN;50%;R$ 7.500,00;R$ 5.500,00;1.2 BTC;R$ 2.500,00", "LINK;100%;R$ 10.000,00;R$ 5.000,00;1.0 BTC;R$ 5.000,00", "XRP;100%;R$ 10.000,00;R$ 5.000,00;1.0 BTC;R$ 5.000,00"};
 
         investimentosList = InvestimentosItem.createInvestimentosList(lista, 1);
         InvestimentosAdapter adapter = new InvestimentosAdapter(investimentosList);
