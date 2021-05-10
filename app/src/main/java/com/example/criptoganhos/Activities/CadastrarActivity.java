@@ -2,7 +2,6 @@ package com.example.criptoganhos.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.criptoganhos.R;
 
@@ -21,6 +19,7 @@ import java.util.List;
 
 import helper.DataBaseHelper;
 import helper.InvestDAO;
+import model.Investimento;
 import model.InvestimentosItem;
 
 public class CadastrarActivity extends AppCompatActivity {
@@ -56,15 +55,19 @@ public class CadastrarActivity extends AppCompatActivity {
     }
 
     private void onCadastrarCLick(){
+        String moeda = spinner.getSelectedItem().toString();
+        String valComp = resultados[0].getText().toString();
+        String qtdMoeda = resultados[1].getText().toString();
+
         DataBaseHelper db = new DataBaseHelper(getApplicationContext());
-        String[] dados = {spinner.getSelectedItem().toString(), resultados[1].getText().toString(), resultados[2].getText().toString()};
+        //String[] dados = {moeda+";" + valComp+";" + qtdMoeda+";" + "aguardando host;aguardando host;aguardando host"};
 
-
-
+        String[] dados = {moeda, valComp, qtdMoeda};
 
         InvestDAO investDAO = new InvestDAO(getApplicationContext());
-        InvestimentosItem investItem = new InvestimentosItem(dados);
+        Investimento investimento = new Investimento(dados);
 
+        investDAO.salvar(investimento);
 
 //        if (spinner.getSelectedItem().toString().equals("Selecione uma moeda")){
 //

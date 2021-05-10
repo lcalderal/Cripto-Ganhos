@@ -13,6 +13,7 @@ import com.example.criptoganhos.R;
 
 import java.util.List;
 
+import model.Investimento;
 import model.InvestimentosItem;
 
 public class InvestimentosAdapter extends RecyclerView.Adapter<InvestimentosAdapter.ViewHolder>{
@@ -52,14 +53,20 @@ public class InvestimentosAdapter extends RecyclerView.Adapter<InvestimentosAdap
 
     @Override
     public void onBindViewHolder(@NonNull InvestimentosAdapter.ViewHolder holder, int position) {
-        InvestimentosItem investimentos = investList.get(position);
+        InvestimentosItem investimento = investList.get(position);
 
-        holder.moeda.setText(investimentos.getMoeda());
-        holder.percentual.setText(investimentos.getPercentual());
-        holder.valAtual.setText(investimentos.getValAtual());
-        holder.valComprado.setText(investimentos.getValComprado());
-        holder.qtdMoeda.setText(investimentos.getQtdMoeda());
-        holder.saldo.setText(investimentos.getSaldo());
+        holder.moeda.setText(investimento.getMoeda());
+        holder.valComprado.setText(investimento.getValComprado());
+        holder.qtdMoeda.setText(investimento.getQtdMoeda());
+
+//        InvestimentosItem investimentos = investList.get(position);
+//
+//        holder.moeda.setText(investimentos.getMoeda());
+//        holder.percentual.setText(investimentos.getPercentual());
+//        holder.valAtual.setText(investimentos.getValAtual());
+//        holder.valComprado.setText(investimentos.getValComprado());
+//        holder.qtdMoeda.setText(investimentos.getQtdMoeda());
+//        holder.saldo.setText(investimentos.getSaldo());
 
 
     }
@@ -67,6 +74,6 @@ public class InvestimentosAdapter extends RecyclerView.Adapter<InvestimentosAdap
     @Override
     public int getItemCount() {
         //------------------- VERIFICAR AQUI PQ PODE DAR ERRO NO TAMANHO
-        return 2;
+        return investList.size();
     }
 }

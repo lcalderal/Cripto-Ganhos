@@ -19,7 +19,6 @@ public class InvestimentosItem {
         this.saldo = resultado[5];
     }
 
-
     public static ArrayList<InvestimentosItem> createInvestimentosList(String[] investimentosDB, int numInvest) {
         ArrayList<InvestimentosItem> invest = new ArrayList();
 
