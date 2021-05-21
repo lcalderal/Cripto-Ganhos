@@ -2,12 +2,15 @@ package helper;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import model.CallCoins;
+import model.CoinCallback;
 import model.Investimento;
 import model.InvestimentosItem;
 
@@ -24,12 +27,12 @@ public class InvestDAO implements InterfaceInvestDAO{
     }
 
     @Override
-    public boolean salvar(Investimento investimento) {
+    public boolean salvar(InvestimentosItem investimento) {
         ContentValues cv = new ContentValues();
 
-        cv.put("moeda", investimento.getMoedaDB());
-        cv.put("val_comp", investimento.getValCompradoDB());
-        cv.put("qtd_moeda", investimento.getQtdMoedaDB());
+        cv.put("moeda", investimento.getMoeda());
+        cv.put("val_comp", investimento.getValComprado());
+        cv.put("qtd_moeda", investimento.getQtdMoeda());
 
         try {
             escreve.insert(DataBaseHelper.TABELA_COINS,null, cv);
@@ -43,17 +46,30 @@ public class InvestDAO implements InterfaceInvestDAO{
     }
 
     @Override
-    public boolean atualizar(Investimento investimento) {
+    public boolean atualizar(InvestimentosItem investimento) {
         return false;
     }
 
     @Override
-    public boolean deletar(Investimento investimento) {
+    public boolean deletar(InvestimentosItem investimento) {
         return false;
     }
 
     @Override
-    public List<Investimento> listar() {
-        return null;
+    public List<InvestimentosItem> listar() {
+        List<InvestimentosItem> investimentos = new ArrayList<>();
+        Cursor cursor = ler.rawQuery("SELECT * FROM coins", null);
+
+        while (cursor.moveToNext()){
+            String[] resultado = new String[5];
+            resultado[0] = cursor.getString(cursor.getColumnIndex("moeda"));
+            resultado[1] = cursor.getString(cursor.getColumnIndex("qtd_moeda"));
+            resultado[2] = cursor.getString(cursor.getColumnIndex("val_comp"));
+            resultado[3] = "Aguardando API...";
+
+            investimentos.add(new InvestimentosItem(resultado));
+        }
+        cursor.close();
+        return investimentos;
     }
 }

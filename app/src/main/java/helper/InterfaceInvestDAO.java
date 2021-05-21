@@ -7,8 +7,8 @@ import model.InvestimentosItem;
 
 public interface InterfaceInvestDAO {
 
-    public boolean salvar(Investimento investimento);
-    public boolean atualizar(Investimento investimento);
-    public boolean deletar(Investimento investimento);
-    public List<Investimento> listar();
+    public boolean salvar(InvestimentosItem investimento);
+    public boolean atualizar(InvestimentosItem investimento);
+    public boolean deletar(InvestimentosItem investimento);
+    public List<InvestimentosItem> listar();
 }

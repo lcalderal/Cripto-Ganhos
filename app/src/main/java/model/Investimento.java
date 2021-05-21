@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Investimento {
 
     private final String moeda;
-    private final String valComprado;
     private final String qtdMoeda;
+    private final String valComprado;
 
     public Investimento(String[] resultado) {
         this.moeda = resultado[0];
-        this.valComprado = resultado[1];
-        this.qtdMoeda = resultado[2];
+        this.qtdMoeda = resultado[1];
+        this.valComprado = resultado[2];
     }
 
     public static ArrayList<Investimento> createInvestimentoList(String[] investimentosDB, int numInvest) {
@@ -29,11 +29,11 @@ public class Investimento {
         return moeda;
     }
 
-    public String getValCompradoDB() {
-        return valComprado;
-    }
-
     public String getQtdMoedaDB() {
         return qtdMoeda;
+    }
+
+    public String getValCompradoDB() {
+        return valComprado;
     }
 }

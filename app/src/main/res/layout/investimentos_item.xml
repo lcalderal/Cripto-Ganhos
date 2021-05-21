@@ -1,177 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="330dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp"
+    android:layout_width="300dp"
+    android:layout_height="170dp"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="10dp"
+    android:layout_marginTop="20dp"
     android:background="@drawable/coins_spinner"
-    android:elevation="1dp"
-    android:orientation="horizontal"
-    android:padding="10dp">
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="25dp"
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/txtMoeda"
-        style="@style/cripto_title"
-        android:layout_width="wrap_content"
+        style="@style/cripto_subtitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="8dp"
         android:text="Moeda"
-        app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/text_cripto" />
 
-    <TextView
-        android:id="@+id/txtPercentual"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:text="Percentual:"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintStart_toStartOf="@+id/guideline8" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/txtValAtual"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:text="Valor atual:"
-        app:layout_constraintBottom_toTopOf="@+id/guideline12"
-        app:layout_constraintStart_toStartOf="@+id/guideline8" />
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtValComp"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:text="Valor comprado:"
-        app:layout_constraintBottom_toTopOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline8" />
+            <TextView
+                android:id="@+id/txtQtdMoeda"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Quantidade:" />
 
-    <TextView
-        android:id="@+id/txtSaldo"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:text="Saldo:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline8" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0" />
+            <TextView
+                android:id="@+id/txtValComp"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Valor Comprado:" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="1.0" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+            <TextView
+                android:id="@+id/txtValAtual"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Valor Atual:" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+            <TextView
+                android:id="@+id/txtPercentual"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Percentual:" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+            <TextView
+                android:id="@+id/txtSaldo"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Saldo:" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtResultPercent"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtResultAtual"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline12"
-        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+            <TextView
+                android:id="@+id/txtResultQtd"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:text="TextView"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtResultComprado"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-    <TextView
-        android:id="@+id/txtResultSaldo"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+            <TextView
+                android:id="@+id/txtResultComprado"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:text="TextView"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtQtdMoeda"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:text="Quantidade moeda:"
-        app:layout_constraintBottom_toTopOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline8" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-    <TextView
-        android:id="@+id/txtResultQtd"
-        style="@style/cripto_white_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline14"
-        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+            <TextView
+                android:id="@+id/txtResultAtual"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:text="TextView"
+                android:textStyle="bold" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtResultPercent"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/cabin"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/lightGray"
+                android:focusable="false" />
+
+            <TextView
+                android:id="@+id/txtResultSaldo"
+                style="@style/cripto_gray_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:text="TextView"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

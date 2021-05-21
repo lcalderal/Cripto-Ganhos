@@ -47,7 +47,7 @@ public class CadastrarActivity extends AppCompatActivity {
     private void createSpinner(){
         spinner.getBackground().setColorFilter(Color.parseColor("#2B8EE4"), PorterDuff.Mode.SRC_ATOP);
 
-        List<String> coins = new ArrayList<>(Arrays.asList("Selecione uma moeda","BITCOIN", "ETHERUM", "LINK", "XRP", "BNB"));
+        List<String> coins = new ArrayList<>(Arrays.asList("Selecione uma moeda","BITCOIN", "ETHERUM", "LINK", "XRP", "BNB", "DOGE"));
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, coins);
         dataAdapter.setDropDownViewResource(R.layout.spinner_item);
@@ -59,19 +59,13 @@ public class CadastrarActivity extends AppCompatActivity {
         String valComp = resultados[0].getText().toString();
         String qtdMoeda = resultados[1].getText().toString();
 
-        DataBaseHelper db = new DataBaseHelper(getApplicationContext());
-        //String[] dados = {moeda+";" + valComp+";" + qtdMoeda+";" + "aguardando host;aguardando host;aguardando host"};
-
         String[] dados = {moeda, valComp, qtdMoeda};
 
         InvestDAO investDAO = new InvestDAO(getApplicationContext());
-        Investimento investimento = new Investimento(dados);
+        InvestimentosItem investimento = new InvestimentosItem(dados);
 
         investDAO.salvar(investimento);
 
-//        if (spinner.getSelectedItem().toString().equals("Selecione uma moeda")){
-//
-//        }
     }
 
     private void getXML(){
